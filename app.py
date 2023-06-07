@@ -4,6 +4,11 @@ from urllib.parse import urlparse, parse_qs
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return "Hello, World!"
+
+
 @app.route('/<video_ids>')
 def get_playlist_page(video_ids):
     url = f"https://www.youtube.com/watch_videos?video_ids={video_ids}"
